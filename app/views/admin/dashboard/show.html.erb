@@ -1,3 +1,5 @@
 <h1>Admin::Dashboard#show</h1>
 <p>Find me in app/views/admin/dashboard/show.html.erb</p>
-<% raise ENV['HTTP_AUTH_USER'].inspect %>
+<p>Total Products: <%= @productCount %></p>
+<p>Total Categories: <%= @categoryCount %></p>
+<p><%= link_to 'Products',  [:admin, :products] %></p>
