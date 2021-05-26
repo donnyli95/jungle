@@ -20,6 +20,20 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :new, :create]
   end
 
+  # These routes will be for signup. The first renders a form in the browse, the second will 
+  # receive the form and create a user in our database using the data given to us by the user.
+  # namespace :authenticate do
+  #   root to: 'sessions#new'
+  #   resources :users, only: [:new, :create]
+  #   resource :sessions, only: [:create, :destroy]
+  # end
+
+  get 'signup', to: 'users#new'
+  post 'users', to: 'users#create'
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
