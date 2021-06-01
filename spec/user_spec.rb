@@ -6,7 +6,8 @@ RSpec.describe User, type: :model do
     
     it "is not valid without a password field" do
       user = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password_confirmation: 'cheese'
       })
@@ -15,7 +16,8 @@ RSpec.describe User, type: :model do
 
     it "is not valid without a password_confirmation field" do
       user = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: 'cheese'
       })
@@ -33,7 +35,8 @@ RSpec.describe User, type: :model do
 
     it "has matching password confirmation" do
       user = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: 'cheese',
         password_confirmation: 'cheese'
@@ -43,14 +46,16 @@ RSpec.describe User, type: :model do
 
     it "cannot have matching emails" do
       user1 = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: 'cheese',
         password_confirmation: 'cheese'
       })
 
       user2 = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: 'cheese',
         password_confirmation: 'cheese'
@@ -60,7 +65,8 @@ RSpec.describe User, type: :model do
 
     it "is not valid if password is shorter than 3 characters" do
       user = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: '1',
         password_confirmation: 'cheese'
@@ -75,7 +81,8 @@ RSpec.describe User, type: :model do
     password = '123'
     
     user = User.create({
-      name: 'donny',
+      first_name: 'donny',
+      last_name: 'li',
       email: email,
       password: password,
       password_confirmation: password
@@ -93,7 +100,8 @@ RSpec.describe User, type: :model do
   describe 'password_confirmation' do
     it "it is not valid if password does not match password_confirmation" do
       user = User.create({
-        name: 'donny',
+        first_name: 'donny',
+        last_name: 'li',
         email: 'donny@donny.com',
         password: '123',
         password_confirmation: 'cheese'
