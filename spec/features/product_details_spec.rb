@@ -19,15 +19,13 @@ RSpec.feature "user can navigate from home page to the product detail page by cl
       visit root_path
     end
 
-    scenario "They see all products" do
+    scenario "Shows product details" do
       # ACT
       # puts page.html 
       click_on "Details", match: :first
-  
-      #DEBUG / VERIFY
-      save_screenshot 'visit_product_detail.png'
-
 
       expect(page).to have_css 'article.product-detail'
+
+      save_screenshot 'visit_product_detail.png'
     end
 end
