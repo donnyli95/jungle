@@ -38,3 +38,15 @@ RSpec.describe Product, type: :model do
 
   end
 end
+
+# more explicit testing
+# p user.errors.full_message
+# expect(user.errors.full_messages[0]).to eq("Error Message Here")
+
+# starting with a 'perfect' instance
+# before :each do
+#   @user = User.new(
+#     name: 'cheese',
+#     password: 'word'
+#   )
+# end
